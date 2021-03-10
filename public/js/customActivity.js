@@ -10,6 +10,19 @@ define([
     var payload = {};
     $(window).ready(onRender);
 
+    var ZaloOA = require('zalo-sdk').ZaloOA;
+ 
+    var zaConfig = {
+        oaid: '400758883260498988',
+        secretkey: 'qD_rHtP9wWVLt_9ESKFi1zhRyaTxMh96kwtAMcT3X437su9Y8HBcGj7GXMio29zZr-Y7V3qLtcZvsBf8MZxeGw7wkrXc8i8Hj_YiErm3qoB-wCaZMMgE3PgYao9POCmJfhY2F4HEcGYWjFSLN6FeN8o-atLfTDLVdvFBVJK5kJVd-iW_DoseSTJKkbam7zTJplpCGnuPlq77nlDX1GYCJANkw4rL8_fp_ykYM0fNw7BTgB9I133tME3OiMu3ED9_vFtDFpe8inYGvEyiOYY0UPBpxqzADQfyRPElAtXmNkyF'
+    }
+    var ZOAClient = new ZaloOA(zaConfig);
+
+    var userId = '0976834610';
+    ZOAClient.api('getprofile', { uid: userId }, function(response) {
+        console.log(response);
+    })
+
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
