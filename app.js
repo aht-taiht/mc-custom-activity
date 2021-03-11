@@ -18,7 +18,7 @@ var zaConfig = {
 }
 var ZOAClient = new ZaloOA(zaConfig);
 console.log('taiht');
-var userId = '0976834610';
+var userId = '8683178262590404819';
 ZOAClient.api('getprofile', { uid: userId }, function(response) {
     console.log(response);
 })
